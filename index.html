@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Authentication</title>
+</head>
+<body>
+    <script>
+        // Your JavaScript code here
+        async function checkAuthentication() {
+            import {createClient} from "@propelauth/javascript"
+
+            const authClient = createClient({...})
+
+            const authInfo = await authClient.getAuthenticationInfoOrNull()
+
+            if (authInfo) {
+                const accessToken = authInfo.accessToken;
+                const redirectUrl = `https://your-redirect-url.com?access_token=${accessToken}`;
+                window.location.href = redirectUrl;
+            } else {
+                document.body.innerHTML = "<h1>User is not logged in</h1>";
+            }
+        }
+
+        window.onload = checkAuthentication;
+    </script>
+</body>
+</html>
