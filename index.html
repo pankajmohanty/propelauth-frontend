@@ -6,9 +6,14 @@
     <title>Authentication</title>
 </head>
 <body>
+    <script 
+    src="https://www.unpkg.com/@propelauth/javascript@2.0.11/dist/javascript.min.js" 
+    integrity="sha384-FENNH2f7QuQvkZJBL7jebLr0OtYKgTA2iq+C5g3VXXX7SBwWmeMMoc+pBBtcn76G" 
+    crossorigin="anonymous"></script>
+    
     <script type="module">
         // Import the createClient function at the top level
-        import { createClient } from "./@propelauth/javascript";
+        import { createClient } from "@propelauth/javascript";
 
         // Define the checkAuthentication function
         async function checkAuthentication() {
