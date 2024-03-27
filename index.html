@@ -6,19 +6,20 @@
     <title>Authentication</title>
 </head>
 <body>
-    <script type="module" >
-        // Your JavaScript code here
+    <script type="module">
+        // Import the createClient function at the top level
+        import { createClient } from "@propelauth/javascript";
+
+        // Define the checkAuthentication function
         async function checkAuthentication() {
-            import {createClient} from "@propelauth/javascript"
-
             const authClient = createClient({
-    // The base URL where your authentication pages are hosted. You can find this under the Frontend Integration section for your project.
-    authUrl: "https://auth.fload.tech",
-    // If true, periodically refresh the access token in the background. This helps ensure you always have a valid token ready to go. Default true.
-    enableBackgroundTokenRefresh: true,
-});
+                // The base URL where your authentication pages are hosted. You can find this under the Frontend Integration section for your project.
+                authUrl: "https://auth.fload.tech",
+                // If true, periodically refresh the access token in the background. This helps ensure you always have a valid token ready to go. Default true.
+                enableBackgroundTokenRefresh: true,
+            });
 
-            const authInfo = await authClient.getAuthenticationInfoOrNull()
+            const authInfo = await authClient.getAuthenticationInfoOrNull();
 
             if (authInfo) {
                 const accessToken = authInfo.accessToken;
@@ -29,7 +30,9 @@
             }
         }
 
+        // Call the checkAuthentication function when the window loads
         window.onload = checkAuthentication;
     </script>
 </body>
 </html>
+
