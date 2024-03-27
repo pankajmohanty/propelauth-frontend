@@ -11,13 +11,9 @@
     integrity="sha384-FENNH2f7QuQvkZJBL7jebLr0OtYKgTA2iq+C5g3VXXX7SBwWmeMMoc+pBBtcn76G" 
     crossorigin="anonymous"></script>
     
-    <script type="module">
-        // Import the createClient function at the top level
-        import { createClient } from "@propelauth/javascript";
-
-        // Define the checkAuthentication function
+    <script>
         async function checkAuthentication() {
-            const authClient = createClient({
+            const authClient = PropelAuth.createClient({
                 // The base URL where your authentication pages are hosted. You can find this under the Frontend Integration section for your project.
                 authUrl: "https://auth.fload.tech",
                 // If true, periodically refresh the access token in the background. This helps ensure you always have a valid token ready to go. Default true.
@@ -40,4 +36,5 @@
     </script>
 </body>
 </html>
+
 
