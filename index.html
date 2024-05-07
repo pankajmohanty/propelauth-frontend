@@ -24,7 +24,7 @@
 
             if (authInfo) {
                 const accessToken = authInfo.accessToken;
-                const redirectUrl = `https://your-redirect-url.com?access_token=${accessToken}`;
+                const redirectUrl = `https://dash.fload.tech/app/fload/authentication-65c34ee536944a2fc5c7dee7?access_token=${accessToken}`;
                 window.location.href = redirectUrl;
             } else {
                 document.body.innerHTML = "<h1>User is not logged in</h1>";
